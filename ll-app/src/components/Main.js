@@ -1,15 +1,18 @@
 import React from "react";
 import HeroSection from "./HeroSection";
 import SpecialsSection from "./SpecialsSection";
+import Testimonials from "./TestimonialsSection";
 import About from "./AboutSection";
+import FlexDemo from "./FlexDemo";
 
 function Main() {
     return (
         <main>
-            <h1>Main component</h1>
-            <HeroSection />
-            <SpecialsSection />
-            <About />
+            {<HeroSection />}
+            {<SpecialsSection />}
+            {<Testimonials />} 
+            {<About />}
+            {/*<FlexDemo />*/}
         </main>
     );
 }
