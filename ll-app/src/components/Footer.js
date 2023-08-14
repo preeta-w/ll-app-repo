@@ -9,7 +9,6 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 function Footer() {
     return (
         <footer className="row home-section-styles">
-            <section className="column col-2"></section>
             
             <section className="column col-2">
                 <img src={footerlogo} />
@@ -31,17 +30,19 @@ function Footer() {
             
             <section className="column col-2">
                 <p><b>Contact</b></p>
-                <nav>
-                    <ul>
-                        <li><FontAwesomeIcon icon={faBuilding} /><br />
-                        123 Chicago Street <br />
-                        Chicago, IL 12345</li>
-                        <li><FontAwesomeIcon icon={faPhone} /><br /> 
-                        123-456-7890</li>
-                        <li><FontAwesomeIcon icon={faEnvelope} /> <br />
-                        littlelemon@gmail.com</li>
-                    </ul>
-                </nav>
+                <div className="row footer-contact">
+                    <p><FontAwesomeIcon icon={faBuilding} /></p>
+                    <p>123 Chicago Street <br />
+                        Chicago, IL 12345</p>
+                </div>
+                <div className="row footer-contact">
+                    <p><FontAwesomeIcon icon={faPhone} /></p>
+                    <p>123-456-7890</p>
+                </div>
+                <div className="row footer-contact">
+                    <p><FontAwesomeIcon icon={faEnvelope} /></p>
+                    <p>litlem@gmail.com</p>
+                </div>
             </section>
 
             <section className="column col-2">
@@ -55,7 +56,6 @@ function Footer() {
                 </nav>
             </section>
 
-            <section className="column col-2"></section>
         </footer>
     );
 }

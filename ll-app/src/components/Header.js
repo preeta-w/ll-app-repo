@@ -3,14 +3,13 @@ import headerlogo from "../images/Logo.svg";
 
 function Header() {
     return (
-        <header className="row">
-            <div className="column col-2"></div>
+        <header className="row" id="home">
 
             <div className="column col-2">
-               <img src={headerlogo} />
+               <a href="#home"><img src={headerlogo} /></a>
             </div>
 
-            <div className="column col-6">
+            <div className="column col-10">
                 <nav>
                     <ul>
                         <li><a href="#hero" className="nav-links">Home</a></li>
@@ -23,7 +22,6 @@ function Header() {
                 </nav>
             </div>
 
-            <div className="column col-2"></div>
         </header>
     );
 }

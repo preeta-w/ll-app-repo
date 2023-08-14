@@ -10,7 +10,7 @@ const ReviewCard = ({userImg, name, rating, excerpt}) => {
                 <div className="column col-11">
                     <p className="card-title">{name}</p>
                     <img src={rating} alt="star rating"/>
-                    <p className="lead-text">{excerpt}</p>
+                    <p>{excerpt}</p>
                 </div>
             </div>
         </article>

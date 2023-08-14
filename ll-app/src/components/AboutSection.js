@@ -4,7 +4,6 @@ import aboutImage from "../images/about-images.png";
 function About() {
     return (
         <section className="about-section row home-section-styles">
-            <section className="column col-2"></section>
 
             <section className="column col-4">
                 <h2 id="about" className="spacer-24">About Little Lemon</h2>
@@ -24,7 +23,6 @@ function About() {
                 <img src={aboutImage} className="hero-img"/>
             </section>
 
-            <section className="column col-2"></section>
         </section>
     );
 }

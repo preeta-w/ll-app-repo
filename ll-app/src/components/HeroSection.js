@@ -4,7 +4,6 @@ import restaurantfood from "../images/restaurantfood.jpg";
 function Hero() {
     return (
         <section className="hero-section row home-section-styles">
-            <section className="column col-2"></section>
 
             <section className="column col-4">
                 <h1 id="hero">Little Lemon</h1>
@@ -18,7 +17,7 @@ function Hero() {
             <section className="column col-4">
                 <img src={restaurantfood} className="hero-img"/>
             </section>
-            <section className="column col-2"></section>
+            
         </section>
     );
 }

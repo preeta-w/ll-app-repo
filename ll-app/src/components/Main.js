@@ -3,15 +3,17 @@ import HeroSection from "./HeroSection";
 import SpecialsSection from "./SpecialsSection";
 import Testimonials from "./TestimonialsSection";
 import About from "./AboutSection";
+import Footer from "./Footer";
 import FlexDemo from "./FlexDemo";
 
 function Main() {
     return (
         <main>
-            {<HeroSection />}
-            {<SpecialsSection />}
-            {<Testimonials />} 
-            {<About />}
+            <HeroSection />
+            <SpecialsSection />
+            <Testimonials />
+            <About />
+            <Footer />
             {/*<FlexDemo />*/}
         </main>
     );
