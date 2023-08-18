@@ -1,20 +1,24 @@
 import React from "react";
-import HeroSection from "./HeroSection";
-import SpecialsSection from "./SpecialsSection";
-import Testimonials from "./TestimonialsSection";
-import About from "./AboutSection";
+import Header from "./Header";
+import Home from "./Home";
+import AboutPage from "./AboutPage";
+import MenuPage from "./MenuPage";
+import ReservationsPage from "./ReservationsPage";
 import Footer from "./Footer";
-import FlexDemo from "./FlexDemo";
+import { Routes, Route } from 'react-router-dom';
+
 
 function Main() {
     return (
         <main>
-            <HeroSection />
-            <SpecialsSection />
-            <Testimonials />
-            <About />
+            <Header />            
+            <Routes>
+                <Route path="/" element={<Home />} />            
+                <Route path="/about" element={<AboutPage />} />            
+                <Route path="/menu" element={<MenuPage />} />            
+                <Route path="/reservations" element={<ReservationsPage />} />            
+            </Routes>
             <Footer />
-            {/*<FlexDemo />*/}
         </main>
     );
 }

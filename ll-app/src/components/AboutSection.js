@@ -1,7 +1,7 @@
 import React from "react";
 import aboutImage from "../images/about-images.png";
 
-function About() {
+function AboutSection() {
     return (
         <section className="about-section row home-section-styles">
 
@@ -20,7 +20,7 @@ function About() {
             </section>
 
             <section className="column col-4">
-                <img src={aboutImage} className="hero-img"/>
+                <img src={aboutImage} className="hero-img" alt="Founders of Little Lemon"/>
             </section>
 
         </section>
@@ -28,4 +28,4 @@ function About() {
 }
 
 
-export default About;
+export default AboutSection;

@@ -35,9 +35,9 @@ const Specials = () => {
             <section className="row">
                 <div className="column col-8 spacer-48 center-title">
                     <h2>Weekly Specials</h2>
-                    <button className="button">Order Online</button>
+                    {/*<button className="button">Order Online</button>*/}
                 </div>
-                </section>
+            </section>
 
             <section className="row">
                 <div className="column col-8">

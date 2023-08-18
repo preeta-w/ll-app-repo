@@ -1,5 +1,6 @@
 import React from "react";
 import footerlogo from "../images/footerLogo.png";
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBuilding } from '@fortawesome/free-solid-svg-icons'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
@@ -11,19 +12,18 @@ function Footer() {
         <footer className="row home-section-styles">
             
             <section className="column col-2">
-                <img src={footerlogo} />
+                <img src={footerlogo} alt="Little Lemon Logo" />
             </section>
             
             <section className="column col-2">
                 <p><b>Popular links</b></p>
                 <nav>
                     <ul>
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#">Menu</a></li>
-                        <li><a href="#">Reservations</a></li>
-                        <li><a href="#">Order Online</a></li>
-                        <li><a href="#">Login</a></li>
+                        <Link to="/" className="nav-links"><li>Home</li></Link>
+                        <Link to="/about" className="nav-links"><li>About</li></Link>
+                        <Link to="/menu" className="nav-links"><li>Menu</li></Link>
+                        <Link to="/reservations" className="nav-links"><li>Reservations</li></Link>
+                        <Link to="/login" className="nav-links"><li>Login</li></Link>
                     </ul>
                 </nav>
             </section>
@@ -49,9 +49,9 @@ function Footer() {
                 <p><b>Social Media</b></p>
                 <nav>
                     <ul>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">TikTok</a></li>
+                        <Link to="https://www.facebook.com/"><li>Facebook</li></Link>
+                        <Link to="https://www.instagram.com/"><li>Instagram</li></Link>
+                        <Link to="https://www.tiktok.com/en/"><li>TikTok</li></Link>
                     </ul>
                 </nav>
             </section>

@@ -176,6 +176,7 @@ h3 {
   font-size: 1.25rem;
   font-weight: 800;
   color: var(--sec-dk-gray);
+  text-transform: uppercase;
 }
 
 h4 {
@@ -374,6 +375,10 @@ main {
   align-items: center;
 }
 
+.menu-cols {
+  margin-right: 1.5rem;
+}
+
 footer {
   background-color: var(--sec-dk-gray);
   color: white;
@@ -401,6 +406,23 @@ footer a:hover {
 
 footer a:active {
   color: var(--sec-orange);
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-price {
+  text-align: right;
+}
+
+.menu-section-title {
+  padding-bottom: 1.5rem;
+}
+
+.dish-title {
+  padding-bottom: .5rem;
 }
 
 
@@ -450,6 +472,10 @@ footer a:active {
   }
 
   .about-section {
+    flex-direction: column;
+  }
+
+  .menu-page {
     flex-direction: column;
   }
 
