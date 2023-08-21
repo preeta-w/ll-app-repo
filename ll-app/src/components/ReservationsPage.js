@@ -1,5 +1,6 @@
 import React from "react";
 import Hero from "./Hero";
+import BookingForm from "./BookingForm";
 import bruschetta from "../images/bruschetta.png"
 
 function ReservationsPage() {
@@ -13,8 +14,10 @@ function ReservationsPage() {
                 btnText=""
             />
 
-            <section className="row home-section-styles menu-page">
+        <section className="home-section-styles reservations-page">
 
+                <BookingForm />
+            
             </section>
         </main>
     );

@@ -249,12 +249,6 @@ a.text-link {
   color: var(--sec-orange);
 }
 
-.input-title {
-  font-size: 0.875rem;
-  font-weight: 500;
-  columns: var(--sec-dk-gray);
-}
-
 .button {
   background-color: var(--prime-yellow);
   border: none;
@@ -300,6 +294,32 @@ a.text-link {
   padding: 6% 10%;
 }
 
+form {
+  background-color: white;
+  border-radius: 16px;
+  padding: 3rem;
+  border: var(--sec-lt-gray);
+}
+
+fieldset {
+  padding: 1rem;
+  border: none;
+}
+
+label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--sec-dk-gray);
+}
+
+input, select, textarea {
+  width: 100%;
+  margin-top: .5rem;
+  border-color: var(--sec-lt-gray);
+  border-radius: 4px;
+  border-style: solid;
+  padding: .25rem;
+}
 /*=====================*/
 
 
@@ -375,10 +395,6 @@ main {
   align-items: center;
 }
 
-.menu-cols {
-  margin-right: 1.5rem;
-}
-
 footer {
   background-color: var(--sec-dk-gray);
   color: white;
@@ -408,6 +424,10 @@ footer a:active {
   color: var(--sec-orange);
 }
 
+.menu-cols {
+  margin-right: 1.5rem;
+}
+
 .menu-item {
   display: flex;
   flex-direction: column;
@@ -425,6 +445,33 @@ footer a:active {
   padding-bottom: .5rem;
 }
 
+.reservations-page {
+  background-color: var(--sec-peach);
+}
+
+.checkbox-updates {
+  width:auto;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/*
+.checkbox-label {
+  padding-left: .5rem;
+}
+*/
+
+.required {
+  color:firebrick;
+}
+
+.optional {
+  color: var(--sec-md-gray);
+}
+
+
 
 @media all and (max-width: 1023px) {
   header {
@@ -432,6 +479,14 @@ footer a:active {
   }
   
   footer {
+    flex-direction: column;
+  }
+
+  form {
+    padding: .5rem;
+  }
+
+  fieldset {
     flex-direction: column;
   }
 }
@@ -471,6 +526,14 @@ footer a:active {
 
   }
 
+  form {
+    padding: .5rem;
+  }
+
+  fieldset {
+    flex-direction: column;
+  }
+
   .about-section {
     flex-direction: column;
   }
@@ -486,5 +549,6 @@ footer a:active {
   .footer-contact{
     align-items: center;
   }
+
 
 }
