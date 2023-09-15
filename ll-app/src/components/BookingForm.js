@@ -1,22 +1,53 @@
 import React from "react";
 import { useState } from "react";
+import ConfirmedBooking from "./ConfirmedBooking";
+
+function BookingForm({ availableTimes, handleDateChange }) {
+
+    const [guests, setGuests] = useState("1");
+    const [resDate, setResDate] = useState(new Date());
+    const [resTime, setResTime] = useState("1:00pm")
+    const [name, setName] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [email, setEmail] = useState("");
+    const [occasion, setOccasion] = useState("Select an occasion (optional)")
+    const [comments, setComments] = useState("");
+    const [reminders, setReminders] = useState(false);
 
 
 
-function BookingForm() {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setGuests("1");
+        setName("");
+        setPhoneNumber("");
+        setEmail("");
+        setOccasion("Select an occasion (optional)");
+        setComments("");
+        setReminders(false);
+    };
 
-    const 
+    const handleDateChangeUpdate = (e) => {
+        const selectedDate = e.target.value;
+        setResDate(selectedDate);
+        handleDateChange(selectedDate);
+    };
 
     return (
         <main>
             <section className="home-section-styles">
                 
-            <form>
+            <form className="form-styles" onSubmit={handleSubmit}>
             <h2 className="center-title spacer-24">Book a Table</h2>
                 <fieldset className="row">
                     <section className="column col-4 form-section">
                         <label htmlFor="guests">Party Size <span className="required">&#40;Required&#41;</span></label>
-                        <select id="guests" name="guests">
+                        <select
+                        id="guests"
+                        name="guests"
+                        value={guests}
+                        onChange={(e) => setGuests(e.target.value)}
+                        >
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -32,30 +63,29 @@ function BookingForm() {
                     
                     <section className="column col-4 form-section">
                         <label htmlFor="res-date">Date <span className="required">&#40;Required&#41;</span></label>
-                        <input type="date" id="res-date" name="res-date" />
+                        <input 
+                        type="date" 
+                        id="res-date" 
+                        name="res-date"
+                        value={resDate}
+                        onChange={handleDateChangeUpdate}
+                        />
                     </section>
 
                     <section className="column col-4">
                         <label htmlFor="res-time">Time <span className="required">&#40;Required&#41;</span></label>
-                        <select id="res-time" name="res-time">
-                            <option>1:00pm</option>
-                            <option>1:30pm</option>
-                            <option>2:00pm</option>
-                            <option>2:30pm</option>
-                            <option>3:00pm</option>
-                            <option>3:30pm</option>
-                            <option>4:00pm</option>
-                            <option>4:30pm</option>
-                            <option>5:00pm</option>
-                            <option>5:30pm</option>
-                            <option>6:00pm</option>
-                            <option>6:30pm</option>
-                            <option>7:00pm</option>
-                            <option>7:30pm</option>
-                            <option>8:00pm</option>
-                            <option>8:30pm</option>
-                            <option>9:00pm</option>
-                        </select>
+                        <select
+                        id="res-time"
+                        name="res-time"
+                        value={resTime}
+                        onChange={(e) => setResTime(e.target.value)}
+                        >
+                            {availableTimes.map((availableTime) => (
+                                <option key={availableTime} value={availableTime}>
+                                    {availableTime}
+                                </option>
+                            ))}
+                        </select> 
                     </section>
                 </fieldset>
 
@@ -67,6 +97,10 @@ function BookingForm() {
                         type="text" 
                         placeholder="Full Name" 
                         name="name"
+                        value={name}
+                        onChange={(e) => {
+                            setName(e.target.value);
+                        }}
                         />
                     </section>
 
@@ -77,6 +111,10 @@ function BookingForm() {
                         type="tel" 
                         placeholder="(xxx)-xxx-xxxx" 
                         name="phoneNumber"
+                        value={phoneNumber}
+                        onChange={(e) => {
+                            setPhoneNumber(e.target.value);
+                        }}
                         />
                     </section>
                 </fieldset>
@@ -89,13 +127,24 @@ function BookingForm() {
                         type="email" 
                         placeholder="email@gmail.com" 
                         name="email"
+                        value={email}
+                        onChange={(e) => {
+                            setEmail(e.target.value);
+                        }}
                         />
                     </section>
 
                     <section className="column col-6">
-                        <label htmlFor="occassion">Select an Occassion <span className="optional">&#40;optional&#41;</span></label>
-                        <select id="occassion" name="occassion">
-                            <option>Select an occassion &#40;optional&#41;</option>
+                        <label htmlFor="occasion">Select an Occassion <span className="optional">&#40;optional&#41;</span></label>
+                        <select 
+                        id="occasion" 
+                        name="occasion"
+                        value={occasion}
+                        onChange={(e) => {
+                            setOccasion(e.target.value);
+                        }}
+                        >
+                            <option>Select an occasion &#40;optional&#41;</option>
                             <option>Birthday</option>
                             <option>Anniversary</option>
                             <option>Date night</option>
@@ -108,12 +157,31 @@ function BookingForm() {
                 <fieldset className="row">
                     <section className="column col-12">
                         <label htmlFor="comments">Dietary Needs, Special Requests, or Comments <span className="optional">&#40;optional&#41;</span></label>
-                        <textarea id="comments" name="comments" rows="4" placeholder="List all requests and comments here"></textarea>
+                        <textarea 
+                        id="comments" 
+                        name="comments" 
+                        rows="4" 
+                        placeholder="List all requests and comments here"
+                        value={comments}
+                        onChange={(e) => {
+                            setComments(e.target.value);
+                        }}
+                        >
+                        </textarea>
                     </section>
                 </fieldset>
 
                 <fieldset>
-                    <input className="checkbox-updates" id="reminders" type="checkbox" name="reminders"/>
+                    <input 
+                    className="checkbox-updates" 
+                    id="reminders" 
+                    type="checkbox" 
+                    name="reminders"
+                    value={reminders}
+                    onChange={(e) => {
+                        setReminders(!reminders);
+                    }}
+                    />
                     <label style={{paddingLeft: ".5rem"}} htmlFor="reminders">Yes, I want to get text updates and reminders about my reservations. &#40;optional&#41;</label>
                 </fieldset>
 

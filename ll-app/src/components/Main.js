@@ -4,8 +4,10 @@ import Home from "./Home";
 import AboutPage from "./AboutPage";
 import MenuPage from "./MenuPage";
 import ReservationsPage from "./ReservationsPage";
+import ConfirmedBooking from "./ConfirmedBooking";
 import Footer from "./Footer";
 import { Routes, Route } from 'react-router-dom';
+
 
 
 function Main() {
@@ -16,7 +18,8 @@ function Main() {
                 <Route path="/" element={<Home />} />            
                 <Route path="/about" element={<AboutPage />} />            
                 <Route path="/menu" element={<MenuPage />} />            
-                <Route path="/reservations" element={<ReservationsPage />} />            
+                <Route path="/reservations" element={<ReservationsPage />} />
+                <Route path="/confirmedbooking" element={<ConfirmedBooking />} />
             </Routes>
             <Footer />
         </main>
