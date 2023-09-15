@@ -7,21 +7,19 @@ function Header() {
     return (
         <header className="row" id="home">
 
-            <div className="column col-2">
+            <section className="column col-2">
                 <Link to="/"><img src={headerlogo} alt="Little Lemon Logo" /></Link>
-            </div>
+            </section>
 
-            <div className="column col-10">
+            <section className="column col-10">
                 <nav>
                     <ul>
                         <Link to="/" className="nav-links"><li>Home</li></Link>
                         <Link to="/about" className="nav-links"><li>About</li></Link>
                         <Link to="/menu" className="nav-links"><li>Menu</li></Link>
-                        <Link to="/reservations" className="nav-links"><li>Reservations</li></Link>
-                        <Link to="/login" className="nav-links"><li>Login</li></Link>
-                    </ul>
+                        <Link to="/reservations" className="nav-links"><li>Reservations</li></Link>                    </ul>
                 </nav>
-            </div>
+            </section>
 
         </header>
     );

@@ -33,15 +33,15 @@ const Specials = () => {
     return (
         <section className="specials-section home-section-styles">
             <section className="row">
-                <div className="column col-8 spacer-48 center-title">
+                <section className="column col-8 spacer-48 center-title">
                     <h2>Weekly Specials</h2>
                     {/*<button className="button">Order Online</button>*/}
-                </div>
+                </section>
             </section>
 
             <section className="row">
-                <div className="column col-8">
-                    <div className="row">
+                <section className="column col-8">
+                    <section className="row">
                         {specials.map((special) => (
                             <SpecialsCard 
                             key={special.id}
@@ -53,8 +53,8 @@ const Specials = () => {
                             />
                         ))}
                         
-                    </div>
-                </div>
+                    </section>
+                </section>
             </section>
         </section>
     );

@@ -30,19 +30,19 @@ function Footer() {
             
             <section className="column col-2">
                 <p><b>Contact</b></p>
-                <div className="row footer-contact">
+                <section className="row footer-contact">
                     <p><FontAwesomeIcon icon={faBuilding} /></p>
                     <p>123 Chicago Street <br />
                         Chicago, IL 12345</p>
-                </div>
-                <div className="row footer-contact">
+                </section>
+                <section className="row footer-contact">
                     <p><FontAwesomeIcon icon={faPhone} /></p>
                     <p>123-456-7890</p>
-                </div>
-                <div className="row footer-contact">
+                </section>
+                <section className="row footer-contact">
                     <p><FontAwesomeIcon icon={faEnvelope} /></p>
                     <p>litlem@gmail.com</p>
-                </div>
+                </section>
             </section>
 
             <section className="column col-2">

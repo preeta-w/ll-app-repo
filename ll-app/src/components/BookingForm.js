@@ -47,6 +47,7 @@ function BookingForm({ availableTimes, handleDateChange }) {
                         name="guests"
                         value={guests}
                         onChange={(e) => setGuests(e.target.value)}
+                        required
                         >
                             <option>1</option>
                             <option>2</option>
@@ -69,6 +70,7 @@ function BookingForm({ availableTimes, handleDateChange }) {
                         name="res-date"
                         value={resDate}
                         onChange={handleDateChangeUpdate}
+                        required
                         />
                     </section>
 
@@ -79,6 +81,7 @@ function BookingForm({ availableTimes, handleDateChange }) {
                         name="res-time"
                         value={resTime}
                         onChange={(e) => setResTime(e.target.value)}
+                        required
                         >
                             {availableTimes.map((availableTime) => (
                                 <option key={availableTime} value={availableTime}>
@@ -101,6 +104,8 @@ function BookingForm({ availableTimes, handleDateChange }) {
                         onChange={(e) => {
                             setName(e.target.value);
                         }}
+                        required
+                        minlength="1"
                         />
                     </section>
 
@@ -115,6 +120,7 @@ function BookingForm({ availableTimes, handleDateChange }) {
                         onChange={(e) => {
                             setPhoneNumber(e.target.value);
                         }}
+                        required
                         />
                     </section>
                 </fieldset>
@@ -131,6 +137,7 @@ function BookingForm({ availableTimes, handleDateChange }) {
                         onChange={(e) => {
                             setEmail(e.target.value);
                         }}
+                        required
                         />
                     </section>
 
@@ -185,9 +192,9 @@ function BookingForm({ availableTimes, handleDateChange }) {
                     <label style={{paddingLeft: ".5rem"}} htmlFor="reminders">Yes, I want to get text updates and reminders about my reservations. &#40;optional&#41;</label>
                 </fieldset>
 
-                <div style={{textAlign: "center"}}>
-                <button className="button" type="submit">Submit</button>
-                </div>
+                <section style={{textAlign: "center"}}>
+                <button aria-label="On Click" className="button" type="submit">Submit</button>
+                </section>
             </form>
             </section>
         </main>
